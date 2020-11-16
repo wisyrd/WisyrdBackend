@@ -4,11 +4,15 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "mongojs": "^3.1.0",
     "mongoose": "^5.10.14",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "session": "^0.1.0",
+    "sessions": "0.0.2-7"
   },
   "devDependencies": {},
   "scripts": {
