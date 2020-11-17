@@ -29,7 +29,7 @@ app.use(express.static("public"));
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/murmuring-falls-88355',
+    process.env.MONGODB_URI || 'mongodb://murmuring-falls-88355',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
