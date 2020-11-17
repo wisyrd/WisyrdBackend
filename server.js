@@ -22,7 +22,7 @@ app.use(express.json());
 // }))
 
 
-require("../WisyrdBackend/routes/api")(app);
+require("./routes/api")(app);
 
 
 app.use(express.static("public"));
