@@ -3,7 +3,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const mongojs = require("mongojs")
 const seedDB = require("./scripts/seedDB")
-
+// const cors = require("cors")
 
 
 
@@ -14,6 +14,12 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+// app.use(cors({
+//     origin: ""
+
+// }))
 
 
 require("../WisyrdBackend/routes/api")(app);
