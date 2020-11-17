@@ -11,15 +11,13 @@ const spellSchema = new Schema([
         ritual: {type: Boolean},
         aoe: {type: String},
         attackType: {type: String},
-        classes: {
-            classes: [
-                {
-                    index: {type: String},
-                    name: {type: String},
-                    url: {type: String},
-                }
+        classes: 
+            [
+        
+                {type: String}     
+                
             ]
-        },
+        ,
         components: {
             V: {type: Boolean},
             S: {type: Boolean},
@@ -33,17 +31,14 @@ const spellSchema = new Schema([
                 url: {type: String},
             }
         },
-        desc: {
-            desc: [
-                {type: String}
-            ]
-        },
-        healAtSlotLevel: {},
-        higherLevel: {
-            higherLevel: [
+        desc: 
+             {type: String}
+        ,
+        healAtSlotLevel: {type: Object},
+        higherLevel: 
+             [
                 {type: String},
-            ]
-        }
+            ]   
     }
 ]);
 
