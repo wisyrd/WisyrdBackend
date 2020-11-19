@@ -3,27 +3,28 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const mongojs = require("mongojs")
 const seedDB = require("./scripts/seedDB")
-// const cors = require("cors")
+const cors = require("cors")
+var allRoutes = require('./controllers');
+const jwt = require("jsonwebtoken")
 
 
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-// app.use(cors({
-//     origin: ""
-
-// }))
+app.use(allRoutes);
 
 
 
-require("./routes/api")(app);
+
+app.use(cors({
+    origin: process.env.FRONT_END_URL || "http://lvh.me:3000"
+}))
+
+
+require("./controllers/spellcontroller")(app);
 
 
 app.use(express.static("public"));

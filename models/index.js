@@ -1,4 +1,5 @@
 module.exports = {
-    Spell: require("./Spell")
+    Spell: require("./Spell"),
+    User: require("./User")
   };
   
