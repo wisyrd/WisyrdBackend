@@ -1,0 +1,34 @@
+{
+  "name": "wisyrdbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongojs": "^3.1.0",
+    "mongoose": "^5.10.14",
+    "morgan": "^1.10.0",
+    "session": "^0.1.0",
+    "sessions": "0.0.2-7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanK311/WisyrdBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvanK311/WisyrdBackend/issues"
+  },
+  "homepage": "https://github.com/EvanK311/WisyrdBackend#readme"
+}
