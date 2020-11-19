@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("../routes/api");
+const routes = require("./spellcontroller.js");
 const db = require("../models")
 
 
@@ -19,6 +19,8 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
       res.send("routes are connected")
   }) 
+
+  
 }
   
    

@@ -4,16 +4,19 @@ const mongoose = require("mongoose");
 const mongojs = require("mongojs")
 const seedDB = require("./scripts/seedDB")
 const cors = require("cors")
+var allRoutes = require('./controllers');
+const jwt = require("jsonwebtoken")
 
 
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(allRoutes);
+
+
 
 
 app.use(cors({
@@ -21,7 +24,7 @@ app.use(cors({
 }))
 
 
-require("./routes/api")(app);
+require("./controllers/spellcontroller")(app);
 
 
 app.use(express.static("public"));
