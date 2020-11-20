@@ -51,7 +51,11 @@ router.post("/", (req, res) => {
     })
 })
 
+//route for login
+
 router.post("/login", (req, res) => {
+    console.log("someone is trying to login");
+    console.log(req.body);
     db.User.findOne({
          
         email: req.body.email                       
@@ -60,6 +64,8 @@ router.post("/login", (req, res) => {
         if (!foundUser) {
             return res.status(404).send("USER NOT FOUND")
         }
+        console.log(foundUser.password);
+        console.log(req.body.password);
         if (bcrypt.compareSync(req.body.password, foundUser.password)) {
             const userTokenInfo = {
                 email: foundUser.email,
@@ -85,7 +91,7 @@ router.get("/secretProfile", (req, res) => {
     }
     db.User.findOne({
     
-            email: loggedInUser.email,
+            email: loggedInUser.email
 
     }).then(dbUser => {
         res.json(dbUser)
