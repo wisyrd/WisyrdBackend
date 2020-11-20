@@ -14,7 +14,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(allRoutes);
+
 
 
 
@@ -23,6 +23,7 @@ app.use(cors({
     origin: process.env.FRONT_END_URL || "http://lvh.me:3000"
 }))
 
+app.use(allRoutes);
 
 require("./controllers/spellcontroller")(app);
 
@@ -31,7 +32,7 @@ app.use(express.static("public"));
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://murmuring-falls-88355',
+    process.env.MONGODB_URI || 'mongodb://localhost/wisyrddb',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
