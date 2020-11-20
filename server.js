@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const mongojs = require("mongojs")

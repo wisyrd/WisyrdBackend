@@ -12,7 +12,7 @@ const checkAuthStatus = request => {
     }
     const token = request.headers.authorization.split(" ")[1]
     console.log(token);
-    const loggedInUser = jwt.verify(token, 'secretString', (err, data) => {
+    const loggedInUser = jwt.verify(token, process.env.JWT_SECRET, (err, data) => {
         if (err) {
             return false
         }
@@ -72,7 +72,7 @@ router.post("/login", (req, res) => {
                 id: foundUser.id,
                 username: foundUser.username
             }
-            const token = jwt.sign(userTokenInfo, "secretString", { expiresIn: "2h" });
+            const token = jwt.sign(userTokenInfo, process.env.JWT_SECRET, { expiresIn: "2h" });
             return res.status(200).json({ token: token })
         } else {
             return res.status(403).send("wrong password")
