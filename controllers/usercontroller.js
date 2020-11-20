@@ -51,6 +51,8 @@ router.post("/", (req, res) => {
     })
 })
 
+//route for login
+
 router.post("/login", (req, res) => {
     console.log("someone is trying to login");
     console.log(req.body);
