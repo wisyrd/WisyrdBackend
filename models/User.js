@@ -24,7 +24,13 @@ const userSchema = new Schema([
             // validate: {
             //     len: [8]
             // }
-        }
+        },
+        sheets: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Sheets"
+            }
+        ]
          
     }
 ]);
