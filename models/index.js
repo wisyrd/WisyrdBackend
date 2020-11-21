@@ -1,5 +1,6 @@
 module.exports = {
     Spell: require("./Spell"),
-    User: require("./User")
+    User: require("./User"),
+    Sheet: require("./Sheets")
   };
   

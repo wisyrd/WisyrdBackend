@@ -91,7 +91,8 @@ router.get("/secretProfile", (req, res) => {
     }
     db.User.findOne({
     
-            email: loggedInUser.email
+            email: loggedInUser.email,
+            
 
     }).then(dbUser => {
         res.json(dbUser)
