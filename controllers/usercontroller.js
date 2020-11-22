@@ -4,6 +4,7 @@ const db = require("../models");
 const router = express.Router();
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 
 const checkAuthStatus = request => {
     console.log(request.headers);
