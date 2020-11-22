@@ -47,8 +47,22 @@ router.post("/", (req, res) => {
     }).then(newUser => {
         res.json(newUser);
     }).catch(err => {
+        let errorText = "";
+        let statusCode= 500;
+       for (const errorSource in err.errors) {
+           switch (errorSource) {
+               case "email":
+                errorText += "emailerror;"
+                statusCode = 400;
+                break;
+            case "password":
+                errorText += "Passworderror;"
+                statusCode = 400;
+                break;
+           }
+       } 
         console.log(err);
-        res.status(500).end();
+        res.status(statusCode).send(errorText);
     })
 })
 
