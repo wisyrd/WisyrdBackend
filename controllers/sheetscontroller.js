@@ -57,6 +57,17 @@ router.post("/", ({ body }, res) => {
     })
 })
 
+router.post("/:id", ({params, body}, res)=>{
+    db.Sheet.findByIdAndUpdate(params.id, {
+        sheetData: body
+    }).then(updatedSheet=>{
+        res.json(updatedSheet);
+    }).catch(err=>{
+        console.error(err);
+        res.status(500).end();
+    })
+})
+
 
 
 
